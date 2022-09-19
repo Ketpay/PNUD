@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from rest_web.views import *
+from rest_web.views_all import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Rest Web --- ALL
