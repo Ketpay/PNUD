@@ -3,8 +3,8 @@ from django.db import models
 
 class ao_access(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	puntaje=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	puntaje=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'ao_access'
@@ -15,9 +15,9 @@ class ao_access(models.Model):
 
 class ao_need(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	zona=models.CharField(max_length=255, blank=True)
-	puntaje=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	zona=models.CharField(max_length=255, blank=True, null=True)
+	puntaje=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'ao_need'
@@ -29,10 +29,10 @@ class ao_need(models.Model):
 
 class base_metas_estado_tendencia(models.Model):
 
-	meta=models.CharField(max_length=255, blank=True)
-	submeta=models.CharField(max_length=255, blank=True)
-	capa_datos=models.CharField(max_length=255, blank=True)
-	codigo_idso=models.CharField(max_length=255, blank=True)
+	meta=models.CharField(max_length=255, blank=True, null=True)
+	submeta=models.CharField(max_length=255, blank=True, null=True)
+	capa_datos=models.CharField(max_length=255, blank=True, null=True)
+	codigo_idso=models.CharField(max_length=255, blank=True, null=True)
 
  
 	class Meta:
@@ -45,9 +45,9 @@ class base_metas_estado_tendencia(models.Model):
 
 class base_puntos_referencia(models.Model):
 
-	meta=models.CharField(max_length=255, blank=True)
-	submeta=models.CharField(max_length=255, blank=True)
-	descripccion_punto_referencia=models.CharField(max_length=255, blank=True)
+	meta=models.CharField(max_length=255, blank=True, null=True)
+	submeta=models.CharField(max_length=255, blank=True, null=True)
+	descripccion_punto_referencia=models.CharField(max_length=255, blank=True, null=True)
  
 
  
@@ -61,8 +61,8 @@ class base_puntos_referencia(models.Model):
 
 class cw_chemical_trend(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'cw_chemical_trend'
@@ -73,8 +73,8 @@ class cw_chemical_trend(models.Model):
 
 class cw_nutrient_trend(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'cw_nutrient_trend'
@@ -86,8 +86,8 @@ class cw_nutrient_trend(models.Model):
 
 class cw_pathogen_trend(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'cw_pathogen_trend'
@@ -98,8 +98,8 @@ class cw_pathogen_trend(models.Model):
 
 class cw_trash_trend(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'cw_trash_trend'
@@ -111,8 +111,8 @@ class cw_trash_trend(models.Model):
 
 class eco_status(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	puntaje=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	puntaje=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'eco_status'
@@ -123,9 +123,9 @@ class eco_status(models.Model):
 
 class eco_trend(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	actividad_economica=models.CharField(max_length=255, blank=True)
-	puntaje=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	actividad_economica=models.CharField(max_length=255, blank=True, null=True)
+	puntaje=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'eco_trend'
@@ -136,9 +136,9 @@ class eco_trend(models.Model):
 
 class fis_b_bmsy(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	nombre_de_especies=models.CharField(max_length=255, blank=True)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	nombre_de_especies=models.CharField(max_length=255, blank=True, null=True)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'fis_b_bmsy'
@@ -149,9 +149,9 @@ class fis_b_bmsy(models.Model):
 
 class fis_meancatch(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	tipo=models.CharField(max_length=255, blank=True)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	tipo=models.CharField(max_length=255, blank=True, null=True)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'fis_meancatch'
@@ -162,8 +162,8 @@ class fis_meancatch(models.Model):
 
 class hab_mangrove_extent(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'hab_mangrove_extent'
@@ -174,9 +174,9 @@ class hab_mangrove_extent(models.Model):
 
 class hab_mangrove_health(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	balneario=models.CharField(max_length=255, blank=True)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	balneario=models.CharField(max_length=255, blank=True, null=True)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'hab_mangrove_health'
@@ -187,9 +187,9 @@ class hab_mangrove_health(models.Model):
 
 class hab_mangrove_trend(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	balneario=models.CharField(max_length=255, blank=True)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	balneario=models.CharField(max_length=255, blank=True, null=True)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'hab_mangrove_trend'
@@ -200,8 +200,8 @@ class hab_mangrove_trend(models.Model):
 
 class hab_saltmarsh_extent(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'hab_saltmarsh_extent'
@@ -212,8 +212,8 @@ class hab_saltmarsh_extent(models.Model):
 
 class hab_saltmarsh_health(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'hab_saltmarsh_health'
@@ -224,8 +224,8 @@ class hab_saltmarsh_health(models.Model):
 
 class hab_saltmarsh_trend(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'hab_saltmarsh_trend'
@@ -236,9 +236,9 @@ class hab_saltmarsh_trend(models.Model):
 
 class le_sector_weight(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	sector=models.CharField(max_length=255, blank=True)
-	puntaje=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	sector=models.CharField(max_length=255, blank=True, null=True)
+	puntaje=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'le_sector_weight'
@@ -250,8 +250,8 @@ class le_sector_weight(models.Model):
 
 class liv_status(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	puntaje=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	puntaje=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'liv_status'
@@ -262,8 +262,8 @@ class liv_status(models.Model):
 
 class liv_trend(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	puntaje=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	puntaje=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'liv_trend'
@@ -274,8 +274,8 @@ class liv_trend(models.Model):
 
 class spp_status(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'spp_status'
@@ -286,8 +286,8 @@ class spp_status(models.Model):
 
 class spp_trend(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0, null=True)
-	valor=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0, )
+	valor=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'spp_trend'
@@ -298,8 +298,8 @@ class spp_trend(models.Model):
 
 class tr_sustainability(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	puntaje=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	puntaje=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'tr_sustainability'
@@ -310,9 +310,9 @@ class tr_sustainability(models.Model):
 
 class tr_visit_sq_pct_tourism(models.Model):
 
-	anio=models.PositiveIntegerField(blank=True, default=0)
-	balneario=models.CharField(max_length=255, blank=True)
-	puntaje=models.FloatField(blank=True, default=0)
+	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	balneario=models.CharField(max_length=255, blank=True, null=True)
+	puntaje=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
 		verbose_name = 'tr_visit_sq_pct_tourism'

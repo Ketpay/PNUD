@@ -16,9 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from rest_web.views_all import *
+from rest_web.metas import *
+# from rest_web.actualizar import *
+from rest_web.vistas import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # Rest Web --- ALL
+###################################################################
+# ---------------------------WEB-----------------------------------
+###################################################################
+path('',index ),
+path('metas/',metas ),
+path('actualizar/',actualizar ),
+
+
+#############################-Views_all-###########################
     path('view/all/ao_access/',View_all_ao_access.as_view()),
     path('view/all/ao_need/',View_all_ao_need.as_view()),
     path('view/all/bmet/',View_all_base_metas_estado_tendencia.as_view()),
@@ -45,5 +56,13 @@ urlpatterns = [
     path('view/all/tr_sustainability/',View_all_tr_sustainability.as_view()),
     path('view/all/tr_visit_sq_pct_tourism/',View_all_tr_visit_sq_pct_tourism.as_view()),
 
-
+#############################-Metas-###########################
+    path('view/all/metas/',Metas_all.as_view()),
+    path('buscar/submetas/',Buscar_submetas.as_view()),
+    path('buscar/capas/',Buscar_capas.as_view()),
+    path('view/meta/data/',Buscar_data.as_view()),
+    path('view/meta/grafico/',Meta_grafico.as_view()),
+    path('view/meta/grafico/barras/',Meta_grafico_barras.as_view()),
+#############################-Actualizar-###########################
+    # path('add/form_1/',Agregar_data_formulario_1.as_view()),
 ]

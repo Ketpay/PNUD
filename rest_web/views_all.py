@@ -32,7 +32,7 @@ class View_all_ao_access(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -65,7 +65,7 @@ class View_all_ao_need(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -99,7 +99,7 @@ class View_all_base_metas_estado_tendencia(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -133,7 +133,7 @@ class View_all_base_puntos_referencia(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -166,7 +166,7 @@ class View_all_cw_chemical_trend(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -198,7 +198,7 @@ class View_all_cw_nutrient_trend(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -230,7 +230,7 @@ class View_all_cw_pathogen_trend(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -262,7 +262,7 @@ class View_all_cw_trash_trend(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -294,7 +294,7 @@ class View_all_eco_status(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -327,7 +327,7 @@ class View_all_eco_trend(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -360,7 +360,7 @@ class View_all_fis_b_bmsy(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -393,7 +393,7 @@ class View_all_fis_meancatch(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -426,7 +426,7 @@ class View_all_hab_mangrove_extent(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -459,7 +459,7 @@ class View_all_hab_mangrove_health(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -492,7 +492,7 @@ class View_all_hab_mangrove_trend(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -525,7 +525,7 @@ class View_all_hab_saltmarsh_extent(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -559,7 +559,7 @@ class View_all_hab_saltmarsh_health(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -592,7 +592,7 @@ class View_all_hab_saltmarsh_trend(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -625,7 +625,7 @@ class View_all_le_sector_weight(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -658,7 +658,7 @@ class View_all_liv_status(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -691,7 +691,7 @@ class View_all_liv_trend(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -724,7 +724,7 @@ class View_all_spp_status(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -757,7 +757,7 @@ class View_all_spp_trend(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -790,7 +790,7 @@ class View_all_spp_trend(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -823,7 +823,7 @@ class View_all_tr_sustainability(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
@@ -856,7 +856,7 @@ class View_all_tr_visit_sq_pct_tourism(APIView):
 
 
 
-			return Response(response,status=status.HTTP_201_CREATED)
+			return Response(response,status=status.HTTP_200_OK)
 	
 		except:
 			response={
