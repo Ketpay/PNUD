@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from rest_web.views_all import *
 from rest_web.metas import *
-# from rest_web.actualizar import *
+from rest_web.actualizar import *
 from rest_web.vistas import *
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -64,5 +64,6 @@ path('actualizar/',actualizar ),
     path('view/meta/grafico/',Meta_grafico.as_view()),
     path('view/meta/grafico/barras/',Meta_grafico_barras.as_view()),
 #############################-Actualizar-###########################
-    # path('add/form_1/',Agregar_data_formulario_1.as_view()),
+    path('add/form_1/',Agregar_data_formulario_1.as_view()),
+    path('add/form_2/',Agregar_data_formulario_2.as_view()),
 ]

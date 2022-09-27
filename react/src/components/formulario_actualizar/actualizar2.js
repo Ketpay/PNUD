@@ -107,8 +107,8 @@ class Actualizar2 extends Component {
         <h2 className="text_center">Formulario para {this.props.dataFromParent} :</h2>
 
  
-{this.state.mostrar_formulario === 0 && <Formulario2  dataFromParent = {this.state.fields}  />}
-   {this.state.mostrar_formulario === 1 && <Formulario3  dataFromParent = {this.state.fields}  />}
+        {this.state.mostrar_formulario === 0 && <Formulario2  dataFromParent = {this.state.fields}  data={this.props.dataFromParent}/>}
+   {this.state.mostrar_formulario === 1 && <Formulario3  dataFromParent = {this.state.fields} data={this.props.dataFromParent} />}
 
    
       </div>

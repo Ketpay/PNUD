@@ -55,7 +55,7 @@ export class Graficobarras extends React.Component {
                 
                 },options_url)
         .then(res => {
-        let titulo = "Grafico de "+this.props.dataFromParentgrafico
+        let titulo = "Gráfico de "+this.props.dataFromParentgrafico
         let datos = res.data;
         let labels = datos.fecha;
         let datas= datos.datasets;

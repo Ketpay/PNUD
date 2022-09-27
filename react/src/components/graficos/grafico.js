@@ -64,7 +64,7 @@ export class Grafico extends React.Component {
           let valores = datos.valores;
           console.log(valores)
           let tipo = datos.tipo;
-          let titulo = "Grafico de "+this.props.dataFromParentgrafico
+          let titulo = "Gráfico de "+this.props.dataFromParentgrafico
   
         //   let toma1=[];
       
