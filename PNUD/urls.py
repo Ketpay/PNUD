@@ -19,6 +19,7 @@ from rest_web.views_all import *
 from rest_web.metas import *
 from rest_web.actualizar import *
 from rest_web.vistas import *
+from rest_web.inicio import *
 urlpatterns = [
     path('admin/', admin.site.urls),
 ###################################################################
@@ -66,4 +67,6 @@ path('actualizar/',actualizar ),
 #############################-Actualizar-###########################
     path('add/form_1/',Agregar_data_formulario_1.as_view()),
     path('add/form_2/',Agregar_data_formulario_2.as_view()),
+#############################-Inicio-###############################
+    path('objetivos/',Inicio_objetivos.as_view()),
 ]

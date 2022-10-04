@@ -7,7 +7,7 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework import status
 from django.contrib.auth.hashers import make_password, check_password
-from db_npud.models import *
+from db_pnud.models import *
 
 class View_all_ao_access(APIView):
 
@@ -15,7 +15,7 @@ class View_all_ao_access(APIView):
 	permission_classes = [permissions.IsAuthenticated]
 	def get(self, request, *args, **kwargs):
 		try:
-
+			 
 			dato=ao_access.objects.all()
 			response={
 			"value":"success",

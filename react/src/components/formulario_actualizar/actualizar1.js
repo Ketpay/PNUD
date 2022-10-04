@@ -23,7 +23,7 @@ class Actualizar1 extends Component {
     const options_url = {
             headers: {
               'Content-Type': 'application/json',
-              "Authorization": "token f5ce280052c99c4926e711ccd02022eb3dac4800"
+              "Authorization": "token a5eece1a1bb0dcf21540c6f573f9c264ab6abfb5"
             }
           };
     const res = await axios.post(url+'/view/meta/data/', {

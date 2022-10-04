@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    "corsheaders",
     'rest_web',
-    'db_npud',
+    'db_pnud',
     'token_app'
 ]
 
@@ -52,10 +53,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = 'PNUD.urls'
-
+CORS_ALLOW_ALL_ORIGINS=True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -89,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  
         'NAME': 'pnud',  
         'USER': 'root',  
-        'PASSWORD': 'pnud',  
+        'PASSWORD': 'root',  
         'HOST': '127.0.0.1',  
         'PORT': '3306',  
         'OPTIONS': {  

@@ -7,7 +7,7 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework import status
 from django.contrib.auth.hashers import make_password, check_password
-from db_npud.models import *
+from db_pnud.models import *
 import random
  
 class Metas_all(APIView):
