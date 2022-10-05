@@ -33,7 +33,7 @@ class Actualizar1 extends Component {
     // console.log(options)
     
     let datos=res.data;
-
+  console.log(datos)
     this.setState({barras:datos.barra })
     this.setState({fields:datos.fields })
     // console.log("-----")
@@ -60,7 +60,7 @@ class Actualizar1 extends Component {
     
       let headers=datos.fields
       let row = table.insertRow(0);
-
+      let w=0
       for (let i = 0; i < headers.length-1; i++) {
         
          let cell = row.insertCell(i);
@@ -75,8 +75,9 @@ class Actualizar1 extends Component {
          cell.style.textAlign = "center"; 
           
          
-
+          
       }
+ 
     //  }
 
     // --------------
@@ -84,14 +85,15 @@ class Actualizar1 extends Component {
     
        let info_datos=array_dato[y]
        let row = table.insertRow(1);
- 
-       for (let i = 0; i < info_datos.length-1; i++) {
 
+       for (let i = 0; i < info_datos.length-1; i++) {
+        
           let cell = row.insertCell(i);
           cell.innerHTML = info_datos[i+1];
           cell.style.textAlign = "center"; 
 
        }
+   
       }
   }
   componentDidMount(){

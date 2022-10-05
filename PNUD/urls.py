@@ -69,4 +69,6 @@ path('actualizar/',actualizar ),
     path('add/form_2/',Agregar_data_formulario_2.as_view()),
 #############################-Inicio-###############################
     path('objetivos/',Inicio_objetivos.as_view()),
+    path('view/objetivos/',View_objetivos.as_view()),
+    path('view/dimensiones/',View_dimensiones.as_view()),
 ]

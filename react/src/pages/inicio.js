@@ -5,17 +5,19 @@ import url from '../constants/constants.js'
 import React from 'react'
 import Select from 'react-select'
 import axios from 'axios'
-import ProgressBar from 'react-bootstrap/ProgressBar';
+// import ProgressBar from 'react-bootstrap/ProgressBar';
+import {Valores} from '../components/valores/valores.js'
+ 
+// import img1 from "../assets/img/img1.jpeg"
+// import img2 from "../assets/img/img2.jpeg"
+ 
 class Inicio extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       selectOptions : [],
-      id: "",
+      dato:"",
       n:2,
-      name: '',
-      dato:'',
-      mostrar:0,
      
     }
   }
@@ -31,7 +33,7 @@ class Inicio extends React.Component {
     
   },options_url)
     const options = res.data
-    console.log(options)
+ 
     this.setState({selectOptions: options})
 
   }
@@ -40,130 +42,37 @@ class Inicio extends React.Component {
 }
 handleChange(e){
  
- this.setState({id:e.value, name:e.label })
+ 
+  this.setState({dato:e.value })
+ 
+ if(this.state.n ===0){
+  this.setState({n:1 })
+ }
+ else if(this.state.n ===1){
+  this.setState({n:0 })
+ }
+ else{
+  this.setState({n:0 })
+ }
  
 }
+
 render() { 
     return (
     <div>
-  <h2 className="text_inicio">Bienvenidos a PNUD</h2> 
+  <h2 className="text_inicio titulo_nombre">Bienvenidos a PNUD</h2> 
 
 <p className="text_inicio">Aqui puedes buscar los resultados obtenidos</p>
 
 
-<Select className="select_inicio" options={this.state.selectOptions} onChange={this.handleChange.bind(this)} />
+<Select className="select_inicio" options={this.state.selectOptions} onChange={this.handleChange.bind(this)} 
+defaultValue={{ label: "Nacional", value: 0 }}/>
+{this.state.n === 2 && <Valores  dataFromParent = {0} />}
+{this.state.n === 1 && <Valores  dataFromParent = {this.state.dato}  />}
+   {this.state.n === 0 && <Valores  dataFromParent = {this.state.dato}  />}
  
-<div className="container">
-        <div className="item-left">
-        Score TOTAL :90%
+ 
 
-        </div>
-        <div className="item-right">
-        <ProgressBar now={90}  label={`90%`} animated  />
-        </div>
-        </div>
- 
- 
- 
- 
-        <div className="container_inicio">
-             <div className="item-1">
-             <table class="default">
-  <tr>
-    <th>Elemento</th>
-    <th>Porcentaje</th>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={25}  label={`25%`} animated  variant="success"/> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={30}  label={`30%`} animated  variant="success"/> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={40}  label={`40%`} animated  variant="success"/> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={40}  label={`40%`} animated  variant="success"/> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={50}  label={`50%`} animated  variant="success"/> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={50}  label={`50%`} animated  variant="success"/> </td>
-  </tr>
-</table>
-               </div>
-             <div className="item-2">
-             <table class="default">
-  <tr>
-    <th>Elemento</th>
-    <th>Porcentaje</th>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={45}  label={`45%`} animated  variant="info"/> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={5}  label={`5%`} animated  variant="info"/> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={75}  label={`75%`} animated variant="info" /> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={75}  label={`75%`} animated variant="info" /> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={90}  label={`90%`} animated variant="info" /> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={10}  label={`10%`} animated  variant="info"/> </td>
-  </tr>
-</table>
-               </div>
-             <div className="item-3">
-             <table class="default">
-  <tr>
-    <th>Elemento</th>
-    <th>Porcentaje</th>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={10}  label={`10%`} animated variant="warning" /> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={60}  label={`60%`} animated  variant="warning"/> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={80}  label={`80%`} animated  variant="warning"/> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={70}  label={`70%`} animated variant="warning" /> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={42}  label={`42%`} animated variant="warning" /> </td>
-  </tr>
-  <tr>
-    <td>Dato :</td>
-    <td className='large'><ProgressBar now={10}  label={`10%`} animated  variant="warning"/> </td>
-  </tr>
-</table>
-               </div>
-           </div>
     </div>
     )
 }

@@ -9,7 +9,7 @@ render() {
 
 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Navbar.Brand  >
-  <Link to="/" className="navbar-brand">&nbsp;PNUD </Link>
+  <Link to="/" className="navbar-brand titulo_nombre">&nbsp;PNUD </Link>
   </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav " />
   <Navbar.Collapse id="responsive-navbar-nav">
