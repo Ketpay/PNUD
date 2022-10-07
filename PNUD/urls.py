@@ -20,12 +20,15 @@ from rest_web.metas import *
 from rest_web.actualizar import *
 from rest_web.vistas import *
 from rest_web.inicio import *
+from rest_web.login import *
 urlpatterns = [
     path('admin/', admin.site.urls),
 ###################################################################
 # ---------------------------WEB-----------------------------------
 ###################################################################
-path('',index ),
+
+path('',login ),
+path('inicio/',index ),
 path('metas/',metas ),
 path('actualizar/',actualizar ),
 
@@ -57,6 +60,8 @@ path('actualizar/',actualizar ),
     path('view/all/tr_sustainability/',View_all_tr_sustainability.as_view()),
     path('view/all/tr_visit_sq_pct_tourism/',View_all_tr_visit_sq_pct_tourism.as_view()),
 
+#############################-Login-###########################
+path('login_web/',LoginToken.as_view()),
 #############################-Metas-###########################
     path('view/all/metas/',Metas_all.as_view()),
     path('buscar/submetas/',Buscar_submetas.as_view()),

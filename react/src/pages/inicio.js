@@ -62,7 +62,7 @@ render() {
     <div>
   <h2 className="text_inicio titulo_nombre">Bienvenidos a PNUD</h2> 
 
-<p className="text_inicio">Aqui puedes buscar los resultados obtenidos</p>
+<p className="text_inicio">Aqui puedes buscar los resultados obtenidos en ...</p>
 
 
 <Select className="select_inicio" options={this.state.selectOptions} onChange={this.handleChange.bind(this)} 

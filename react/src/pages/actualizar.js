@@ -11,6 +11,7 @@ import { Actualizar1 } from '../components/formulario_actualizar/actualizar1.js'
 import { Actualizar2 } from '../components/formulario_actualizar/actualizar2.js'
 // import { Metadatos2 } from '../components/meta_datos/metadatos2.js'
 import '../assets/styles/style.css'
+import {Actuapag} from "../components/paginas_data/actualizarpagina.js"
 class Actualizar extends Component {
 
   constructor(props){
@@ -99,7 +100,7 @@ class Actualizar extends Component {
         </div>
         </div>
         
- 
+        {this.state.mostrar === 2 && <Actuapag/>}
    {this.state.mostrar === 0 && <Actualizar1  dataFromParent = {this.state.dato}  />}
    {this.state.mostrar === 1 && <Actualizar2  dataFromParent = {this.state.dato}  />}
  

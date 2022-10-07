@@ -170,3 +170,32 @@
       margin-right: 0;
   }
   }
+
+.login{
+  padding-left: 36%;
+  padding-right: 36%;
+  padding-top: 150px;
+  /* width: 200px; */
+}
+
+@media (max-width: 1000px) {
+  .login {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 150px;
+  }
+  }
+
+.titulo_nombre2{
+  font-family: 'Carter One', cursive;
+  font-size: 60px;
+  text-align: center;
+}
+
+.ingresar{
+  /* margin-left: 25%; */
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+ 

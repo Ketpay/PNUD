@@ -10,6 +10,7 @@ import { Search2 } from '../components/seacrh_metas/search2.js'
 import { Metadatos } from '../components/meta_datos/metadatos.js'
 import { Metadatos2 } from '../components/meta_datos/metadatos2.js'
 import '../assets/styles/style.css'
+import {Metapag} from "../components/paginas_data/metaspagina.js"
 class Metas extends Component {
 
   constructor(props){
@@ -90,6 +91,7 @@ class Metas extends Component {
 
         </div>
         <div className="item-right">
+          
         {this.state.n === 0 && <Search  dataFromParent = {this.state.name} regreso={{mostrarData:this.mostrarData.bind(this)}} />}
         {this.state.n === 1 && <Search2  dataFromParent = {this.state.name} regreso={{mostrarData:this.mostrarData.bind(this)}} />}
       
@@ -99,6 +101,7 @@ class Metas extends Component {
         
         
    {/* -------------------------------------------- */}
+   {this.state.mostrar === 2 && <Metapag/>}
    {this.state.mostrar === 1 && <Metadatos  dataFromParent = {this.state.dato}  />}
    {this.state.mostrar === 0 && <Metadatos2  dataFromParent = {this.state.dato}  />}
 

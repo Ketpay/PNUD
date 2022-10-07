@@ -65,7 +65,7 @@ class View_objetivos(APIView):
 		 
 			
 			filtered_df = df.loc[(df['region_id'] == region)]
-			print(filtered_df)
+			# print(filtered_df)
 			filtered_df = filtered_df.loc[(df['dimension'] == 'score')]
 
 			goal=list(filtered_df["goal"])
