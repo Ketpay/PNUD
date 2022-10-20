@@ -197,6 +197,14 @@ def liv_trend_f(data):
 			val=round(dfPreFinal["trend"][i],4)
 			liv_trend.objects.create(
 				anio=dfPreFinal["year"][i],
+				zona="Vice",
+				puntaje=val,
+				 )
+		for i in range(rows):
+			val=round(dfPreFinal["trend"][i],4)
+			liv_trend.objects.create(
+				anio=dfPreFinal["year"][i],
+				zona="Sechura",
 				puntaje=val,
 				 )
 		val=True

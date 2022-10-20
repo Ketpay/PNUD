@@ -25,7 +25,7 @@ const Actualizarcsv1 = ({dataFromParent}) => {
     formData.append("nombre", dataFromParent);
 
     const response = await axios.post(
-      url+'/add/csv/',
+      url+'/actualizar/add/archivos/',
       formData,
       {
         headers: {

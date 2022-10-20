@@ -263,6 +263,7 @@ class liv_status(models.Model):
 class liv_trend(models.Model):
 
 	anio=models.PositiveIntegerField(blank=True, null=True, default=0)
+	zona=models.CharField(max_length=255, blank=True, null=True)
 	puntaje=models.FloatField(blank=True, null=True, default=0)
  
 	class Meta:
