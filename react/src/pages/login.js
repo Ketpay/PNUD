@@ -50,8 +50,8 @@ class Login extends React.Component {
           "Authorization": "token a5eece1a1bb0dcf21540c6f573f9c264ab6abfb5"
         }
       };
-    const res = await  axios.post(url+'/login_web/', {
-        usuario:val1,
+    const res = await  axios.post(url+'/login/', {
+      username:val1,
         password:val2,
  
     },options_url)
@@ -78,7 +78,7 @@ render() {
           }} className='backgroundLogin'
           >
     <div className='login'>
-       <h2 className='titulo_nombre2' >PNUD</h2> 
+       <h2 className='titulo_nombre2' >Índice de salud de los océanos</h2> 
   <Form>
   
       <Form.Group className="mb-3" controlId="formBasicEmail">

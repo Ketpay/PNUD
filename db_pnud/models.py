@@ -320,3 +320,65 @@ class tr_visit_sq_pct_tourism(models.Model):
 	
 	def __str__(self):
 		return f'{self.anio}'
+
+
+#------------------------------------------------------------
+
+class Indicadores_empleo(models.Model):
+
+	year=models.PositiveIntegerField(blank=True, null=True, default=0)
+	departamento=models.CharField(max_length=255, blank=True, null=True)
+	porcent_agri_pes=models.FloatField(blank=True, null=True, default=0)
+	porcent_hot_rest=models.FloatField(blank=True, null=True, default=0)
+	porcent_trans_comuni=models.FloatField(blank=True, null=True, default=0)
+ 
+	class Meta:
+		verbose_name = 'Indicadores_empleo'
+		verbose_name_plural = 'Indicadores_empleo'	
+	
+	def __str__(self):
+		return f'{self.year} - {self.departamento}'
+
+class Indicadores_ingreso(models.Model):
+
+	year=models.PositiveIntegerField(blank=True, null=True, default=0)
+	departamento=models.CharField(max_length=255, blank=True, null=True)
+	ingre_prom_men=models.FloatField(blank=True, null=True, default=0)
+ 
+ 
+	class Meta:
+		verbose_name = 'Indicadores_empleo'
+		verbose_name_plural = 'Indicadores_empleo'	
+	
+	def __str__(self):
+		return f'{self.year} - {self.departamento}'
+
+
+class Mar_harvest_tonnes(models.Model):
+
+	year=models.PositiveIntegerField(blank=True, null=True, default=0)
+	zona=models.CharField(max_length=255, blank=True, null=True)
+	valor=models.FloatField(blank=True, null=True, default=0)
+ 
+ 
+	class Meta:
+		verbose_name = 'Mar_harvest_tonnes'
+		verbose_name_plural = 'Mar_harvest_tonnes'	
+	
+	def __str__(self):
+		return f'{self.year} - {self.zona}'
+
+
+class Mar_sustainability_score(models.Model):
+
+	year=models.PositiveIntegerField(blank=True, null=True, default=0)
+	zona=models.CharField(max_length=255, blank=True, null=True)
+	valor=models.FloatField(blank=True, null=True, default=0)
+ 
+ 
+	class Meta:
+		verbose_name = 'Mar_sustainability_score'
+		verbose_name_plural = 'Mar_sustainability_score'	
+	
+	def __str__(self):
+		return f'{self.year} - {self.zona}'

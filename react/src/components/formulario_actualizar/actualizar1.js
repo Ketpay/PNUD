@@ -26,7 +26,7 @@ class Actualizar1 extends Component {
               "Authorization": "token a5eece1a1bb0dcf21540c6f573f9c264ab6abfb5"
             }
           };
-    const res = await axios.post(url+'/view/meta/data/', {
+    const res = await axios.post(url+'/metas/view/', {
     dato:this.props.dataFromParent
   },options_url)
     // const options = res.data
@@ -60,7 +60,7 @@ class Actualizar1 extends Component {
     
       let headers=datos.fields
       let row = table.insertRow(0);
-      let w=0
+      // let w=0
       for (let i = 0; i < headers.length-1; i++) {
         
          let cell = row.insertCell(i);
@@ -121,16 +121,7 @@ class Actualizar1 extends Component {
         </div>
 
 
-
-
-
-
- 
- 
       </div>
-
-
-
 
 
     )

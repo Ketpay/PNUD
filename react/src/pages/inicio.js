@@ -29,9 +29,7 @@ class Inicio extends React.Component {
               "Authorization": "token a5eece1a1bb0dcf21540c6f573f9c264ab6abfb5"
             }
           };
-    const res = await axios.post(url+'/objetivos/', {
-    
-  },options_url)
+    const res = await axios.get(url+'/inicio/objetivos/',options_url)
     const options = res.data
  
     this.setState({selectOptions: options})

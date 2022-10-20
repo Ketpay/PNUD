@@ -34,9 +34,7 @@ class Actualizar extends Component {
               "Authorization": "token a5eece1a1bb0dcf21540c6f573f9c264ab6abfb5"
             }
           };
-    const res = await axios.post(url+'/buscar/submetas/', {
-    
-  },options_url)
+    const res = await axios.get(url+'/metas/buscar/submetas/' ,options_url)
     const options = res.data
   
     this.setState({selectOptions: options})

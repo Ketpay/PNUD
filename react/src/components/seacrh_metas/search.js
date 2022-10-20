@@ -24,7 +24,7 @@ class Search extends Component {
               "Authorization": "token a5eece1a1bb0dcf21540c6f573f9c264ab6abfb5"
             }
           };
-    const res = await axios.post(url+'/buscar/capas/', {
+    const res = await axios.post(url+'/metas/buscar/capas/', {
     dato:this.props.dataFromParent
   },options_url)
     const options = res.data

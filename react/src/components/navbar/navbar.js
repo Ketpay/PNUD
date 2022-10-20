@@ -1,6 +1,6 @@
 import React  from "react";
 import { Link } from "react-router-dom";
-import{ Navbar, Nav }  from "react-bootstrap";
+import{ Navbar, Nav ,NavDropdown}  from "react-bootstrap";
 class Navbarweb extends React.Component {
  
 render() { 
@@ -9,23 +9,24 @@ render() {
 
 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Navbar.Brand  >
-  <Link to="/" className="navbar-brand titulo_nombre">&nbsp;PNUD </Link>
+  <Link to="/inicio" className="navbar-brand titulo_nombre">&nbsp;Índice de salud de los océanos </Link>
   </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav " />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="navbar-nav ms-auto mb-2 mb-lg-0">
       <Nav.Link ><Link to="/inicio" className="nav-link"> &nbsp;&nbsp;Inicio </Link></Nav.Link>
       <Nav.Link  ><Link to="/metas/" className="nav-link">&nbsp;&nbsp;Metas</Link></Nav.Link>
-      <Nav.Link  ><Link to="/actualizar/" className="nav-link">&nbsp;&nbsp;Actualizar</Link></Nav.Link>
-      <Nav.Link ><Link to="#" className="nav-link"> &nbsp;&nbsp;Dashboars </Link></Nav.Link>
+      {/* <Nav.Link  ><Link to="/actualizar/" className="nav-link">&nbsp;&nbsp;Actualizar</Link></Nav.Link> */}
+
+      <Nav.Link  ><NavDropdown title="Actualizar" id="collasible-nav-dropdown">
+      <Link to="/actualizar/" className="nav-link">  <NavDropdown.Item href="/actualizar/">Manual</NavDropdown.Item></Link>
+      <Link to="/actualizar/auto/" className="nav-link">  <NavDropdown.Item href="/actualizarcsv/">Automatico</NavDropdown.Item></Link>
+        
+    
+      </NavDropdown></Nav.Link>
+      <Nav.Link ><Link to="#" className="nav-link">  Dashboars </Link></Nav.Link>
       <Nav.Link ><Link to="/" className="nav-link"> &nbsp;&nbsp;Salir &nbsp;&nbsp;</Link></Nav.Link>
-      {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown> */}
+      
     </Nav>
     {/* <Nav> */}
       {/* <Nav.Link href="#deets">More deets</Nav.Link>

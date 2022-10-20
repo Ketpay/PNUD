@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "corsheaders",
     'rest_web',
     'db_pnud',
+    'drf_yasg',
     'token_app'
 ]
 
@@ -119,6 +120,18 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      # 'Basic': {
+      #       'type': 'basic'
+      # },
+      'Token': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   }
+}
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 

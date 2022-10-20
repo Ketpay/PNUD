@@ -15,12 +15,20 @@ import pandas as pd
 import csv
 import os
 from pathlib import Path
+from drf_yasg.utils import swagger_auto_schema 
+from django.utils.decorators import method_decorator
+from drf_yasg import openapi
+
+
+
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 class Inicio_objetivos(APIView):
 
 	authentication_classes = [authentication.TokenAuthentication]
 	permission_classes = [permissions.IsAuthenticated]
-	def post(self, request, *args, **kwargs):
+	def get(self, request, *args, **kwargs):
 		try:
 
 			dato=ao_need.objects.order_by().values('zona').distinct()
@@ -49,6 +57,18 @@ class Inicio_objetivos(APIView):
 			return Response(response,status=status.HTTP_400_BAD_REQUEST)
 
  
+@method_decorator(name='post', decorator=swagger_auto_schema( 
+                     request_body=openapi.Schema(
+                         type=openapi.TYPE_OBJECT,
+                         required=['region'],
+                         properties={
+                             'region': openapi.Schema(type=openapi.TYPE_NUMBER)
+                         },
+                     ),
+                     operation_description='Buscar la region')
+)
+ 
+ 
 
 class View_objetivos(APIView):
 
@@ -58,7 +78,7 @@ class View_objetivos(APIView):
 		try:
 			region=request.data.get("region")
 		 
-			 
+			print(region)
 
 			dire=os.path.join(BASE_DIR,'archivo\\scores.csv')
 			df=pd.read_csv(dire, sep=',')
@@ -84,6 +104,22 @@ class View_objetivos(APIView):
 			"message":"Error to send data"
 			}
 			return Response(response,status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+@method_decorator(name='post', decorator=swagger_auto_schema( 
+                     request_body=openapi.Schema(
+                         type=openapi.TYPE_OBJECT,
+                         required=['region','dimension'],
+                         properties={
+                             'region': openapi.Schema(type=openapi.TYPE_NUMBER),
+                             'dimension': openapi.Schema(type=openapi.TYPE_STRING)
+                         },
+                     ),
+                     operation_description='Buscar la dimension por la region')
+)
+ 
 
 class View_dimensiones(APIView):
 

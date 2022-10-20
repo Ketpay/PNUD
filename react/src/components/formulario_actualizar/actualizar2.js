@@ -26,7 +26,7 @@ class Actualizar2 extends Component {
               "Authorization": "token a5eece1a1bb0dcf21540c6f573f9c264ab6abfb5"
             }
           };
-    const res = await axios.post(url+'/view/meta/data/', {
+    const res = await axios.post(url+'/metas/view/', {
     dato:this.props.dataFromParent
   },options_url)
     // const options = res.data

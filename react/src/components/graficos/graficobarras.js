@@ -49,7 +49,7 @@ export class Graficobarras extends React.Component {
               "Authorization": "token a5eece1a1bb0dcf21540c6f573f9c264ab6abfb5"
             }
           };
-          axios.post(url+'/view/meta/grafico/barras/', {
+          axios.post(url+'/metas/grafico/barras/', {
     
                 dato:this.props.dataFromParentgrafico,
                 

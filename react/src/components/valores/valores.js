@@ -44,7 +44,7 @@ class Valores extends React.Component {
               "Authorization": "token a5eece1a1bb0dcf21540c6f573f9c264ab6abfb5"
             }
           };
-    const res = await axios.post(url+'/view/objetivos/', {
+    const res = await axios.post(url+'/inicio/objetivos/view/', {
         region:this.props.dataFromParent
   },options_url)
     const options = res.data
@@ -102,27 +102,27 @@ render() {
     <th>Score</th>
   </tr>
   <tr>
-    <td> <PopupData dataFromParent = "AO" dataFromParent2 = {this.props.dataFromParent} color = "success"/></td>
+    <td> <PopupData dataFromParent = "AO" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = "Oportunidad de Pesca Artesanal" color = "success"/></td>
     <td className='large'><ProgressBar now={this.state.d0}  label={this.state.d0+` %`} animated  variant="success"/> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "BD" dataFromParent2 = {this.props.dataFromParent} color = "success"/></td>
+    <td><PopupData dataFromParent = "BD" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Biodiversidad' color = "success"/></td>
     <td className='large'><ProgressBar now={this.state.d1}  label={this.state.d1+` %`} animated  variant="success"/> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "CP" dataFromParent2 = {this.props.dataFromParent} color = "success"/></td>
+    <td><PopupData dataFromParent = "CP" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Protección Costera' color = "success"/></td>
     <td className='large'><ProgressBar now={this.state.d2}  label={this.state.d2+` %`} animated  variant="success"/> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "CS" dataFromParent2 = {this.props.dataFromParent} color = "success"/></td>
+    <td><PopupData dataFromParent = "CS" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Almacenamiento de Carbono'color = "success"/></td>
     <td className='large'><ProgressBar now={this.state.d3}  label={this.state.d3+` %`} animated  variant="success"/> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "CW" dataFromParent2 = {this.props.dataFromParent} color = "success"/></td>
+    <td><PopupData dataFromParent = "CW" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Aguas Limpias' color = "success"/></td>
     <td className='large'><ProgressBar now={this.state.d4}  label={this.state.d4+` %`} animated  variant="success"/> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "ECO" dataFromParent2 = {this.props.dataFromParent}color = "success"/></td>
+    <td><PopupData dataFromParent = "ECO" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Economía'color = "success"/></td>
     <td className='large'><ProgressBar now={this.state.d5}  label={this.state.d5+` %`} animated  variant="success"/> </td>
   </tr>
 </table>
@@ -134,27 +134,27 @@ render() {
     <th>Score</th>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "FIS" dataFromParent2 = {this.props.dataFromParent} color = "info"/></td>
+    <td><PopupData dataFromParent = "FIS" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Pesca' color = "info"/></td>
     <td className='large'><ProgressBar now={this.state.d6}  label={this.state.d6+` %`} animated  variant="info"/> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "FP" dataFromParent2 = {this.props.dataFromParent} color = "info"/></td>
+    <td><PopupData dataFromParent = "FP" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Provisión de Alimentos' color = "info"/></td>
     <td className='large'><ProgressBar now={this.state.d7}  label={this.state.d7+` %`} animated  variant="info"/> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "HAB" dataFromParent2 = {this.props.dataFromParent} color = "info"/></td>
+    <td><PopupData dataFromParent = "HAB" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Hábitats' color = "info"/></td>
     <td className='large'><ProgressBar now={this.state.d8}  label={this.state.d8+` %`} animated variant="info" /> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "ICO" dataFromParent2 = {this.props.dataFromParent} color = "info"/></td>
+    <td><PopupData dataFromParent = "ICO" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Especies Icónicas' color = "info"/></td>
     <td className='large'><ProgressBar now={this.state.d9}  label={this.state.d9+` %`} animated variant="info" /> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "LE" dataFromParent2 = {this.props.dataFromParent} color = "info"/></td>
+    <td><PopupData dataFromParent = "LE" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Subsistencias y economía costeras' color = "info"/></td>
     <td className='large'><ProgressBar now={this.state.d11}  label={this.state.d11+` %`} animated variant="info" /> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "LIV" dataFromParent2 = {this.props.dataFromParent} color = "info"/></td>
+    <td><PopupData dataFromParent = "LIV" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 ='Subsistencias' color = "info"/></td>
     <td className='large'><ProgressBar now={this.state.d12}  label={this.state.d12+` %`} animated  variant="info"/> </td>
   </tr>
 </table>
@@ -166,27 +166,27 @@ render() {
     <th>Score</th>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "LSP" dataFromParent2 = {this.props.dataFromParent} color = "danger"/></td>
+    <td><PopupData dataFromParent = "LSP" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Lugares especiales perdurables' color = "danger"/></td>
     <td className='large'><ProgressBar now={this.state.d13}  label={this.state.d13+` %`} animated variant="danger" /> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "MAR" dataFromParent2 = {this.props.dataFromParent} color = "danger"/></td>
+    <td><PopupData dataFromParent = "MAR" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Maricultura' color = "danger"/></td>
     <td className='large'><ProgressBar now={this.state.d14}  label={this.state.d14+` %`} animated  variant="danger"/> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "NP" dataFromParent2 = {this.props.dataFromParent} color = "danger"/></td>
+    <td><PopupData dataFromParent = "NP" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Productos Naturales' color = "danger"/></td>
     <td className='large'><ProgressBar now={this.state.d15}  label={this.state.d15+` %`} animated  variant="danger"/> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "SP" dataFromParent2 = {this.props.dataFromParent} color = "danger"/></td>
+    <td><PopupData dataFromParent = "SP" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Sentido de Lugar' color = "danger"/></td>
     <td className='large'><ProgressBar now={this.state.d16}  label={this.state.d16+` %`} animated variant="danger" /> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "SPP" dataFromParent2 = {this.props.dataFromParent} color = "danger"/></td>
+    <td><PopupData dataFromParent = "SPP" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Especies' color = "danger"/></td>
     <td className='large'><ProgressBar now={this.state.d17}  label={this.state.d17+` %`} animated variant="danger" /> </td>
   </tr>
   <tr>
-    <td><PopupData dataFromParent = "TR" dataFromParent2 = {this.props.dataFromParent} color = "danger"/></td>
+    <td><PopupData dataFromParent = "TR" dataFromParent2 = {this.props.dataFromParent} dataFromParent3 = 'Turismo y Recreación' color = "danger"/></td>
     <td className='large'><ProgressBar now={this.state.d18}  label={this.state.d18+` %`} animated  variant="danger"/> </td>
   </tr>
 </table>

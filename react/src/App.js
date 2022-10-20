@@ -3,6 +3,7 @@ import { BrowserRouter, Route ,Routes} from 'react-router-dom';
 import  {Inicio} from './pages/inicio.js'
 import  {Metas} from './pages/metas.js'
 import  {Actualizar} from './pages/actualizar.js'
+import  {Actualizarcsv} from './pages/actualizarcsv.js'
 import  {Login} from './pages/login.js'
 import {Navbarweb} from './components/navbar/navbar.js'
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route exact path="/inicio" element={<Navbarweb/> } />
       <Route exact path="/metas" element={<Navbarweb/> } />
       <Route exact path="/actualizar" element={<Navbarweb/> } />
+      <Route exact path="/actualizar/auto" element={<Navbarweb/> } />
       <Route exact path="/"   />
  
       <Route path="*" element={<Navbarweb/>} />
@@ -23,6 +25,7 @@ function App() {
       <Route exact path="/inicio" element={<Inicio/>} />
       <Route exact path="/metas" element={<Metas/>} />
       <Route exact path="/actualizar" element={<Actualizar/>} />
+      <Route exact path="/actualizar/auto" element={<Actualizarcsv/>} />
       <Route exact path="/" element={<Login/> } />
       <Route path="*" element={<div><h1>No encontro Pagina</h1></div>} />
     </Routes>

@@ -1,4 +1,4 @@
-
+ 
 import url from '../constants/constants.js' 
  
 
@@ -7,11 +7,13 @@ import Select from 'react-select'
 import axios from 'axios'
 import { Search } from '../components/seacrh_metas/search.js'
 import { Search2 } from '../components/seacrh_metas/search2.js'
+import  Actualizarcsv1  from '../components/formulario_actualizar/actualizarcsv1.js'
+import  Actualizarcsv2  from '../components/formulario_actualizar/actualizarcsv2.js'
 import { Metadatos } from '../components/meta_datos/metadatos.js'
 import { Metadatos2 } from '../components/meta_datos/metadatos2.js'
 import '../assets/styles/style.css'
-import {Metapag} from "../components/paginas_data/metaspagina.js"
-class Metas extends Component {
+import {Actuacsvpag} from "../components/paginas_data/actualizarcsvpagina.js"
+class Actualizarcsv extends Component {
 
   constructor(props){
     super(props)
@@ -21,7 +23,10 @@ class Metas extends Component {
       n:2,
       name: '',
       dato:'',
-      mostrar:2
+      dato2:'',
+      mostrar:2,
+      mostrar2:2,
+     
     }
   }
 
@@ -65,7 +70,7 @@ class Metas extends Component {
     // console.log("llego")
     // console.log(e)
     // this.setState({mostrar:1 })
-
+    this.setState({mostrar2:2 })
     if(this.state.mostrar ===0){
       this.setState({mostrar:1 })
      }
@@ -78,33 +83,65 @@ class Metas extends Component {
      }
     //  console.log(this.state.mostrar)
   }
+
+  // mostrarData2(e){
+  //   this.setState({dato2:e })
+  //   // console.log("llego")
+  //   console.log("regreso")
+  //   console.log(e)
+  //   // this.setState({mostrar:1 })
+  //   if (e==="1"){
+
+
+    
+  //   if(this.state.mostrar2 ===0){
+  //     this.setState({mostrar2:1 })
+  //    }
+  //    else if(this.state.mostrar2 ===1){
+       
+  //     this.setState({mostrar2:0 })
+  //    }
+  //    else{
+  //     this.setState({mostrar2:0 })
+  //    }
+  //   }
+  //   else{
+  //     this.setState({mostrar2:0 })
+  //    }
+  //   //  console.log(this.state.mostrar)
+  // }
+
+
   render() {
     // console.log(this.state.selectOptions)
     return (
       <div>
         <div className="container">
         <div className="item-left">
-        <h4 className="select_center">Buscar Metas:</h4>
+        <h4 className="select_center">Agregar data en :</h4>
         <Select className="select_center" options={this.state.selectOptions} onChange={this.handleChange.bind(this)} />
 
         </div>
         <div className="item-right">
-          
         {this.state.n === 0 && <Search  dataFromParent = {this.state.name} regreso={{mostrarData:this.mostrarData.bind(this)}} />}
         {this.state.n === 1 && <Search2  dataFromParent = {this.state.name} regreso={{mostrarData:this.mostrarData.bind(this)}} />}
       
-        {/* <Select className="select_center" options={this.state.selectOptions} onChange={this.handleChange.bind(this)} /> */}
+       
         </div>
         </div>
         
-        
-   {/* -------------------------------------------- */}
-   {this.state.mostrar === 2 && <Metapag/>}
-   {this.state.mostrar === 1 && <Metadatos  dataFromParent = {this.state.dato}  />}
-   {this.state.mostrar === 0 && <Metadatos2  dataFromParent = {this.state.dato}  />}
-
+        {this.state.mostrar === 2 && <Actuacsvpag/>}
+   {this.state.mostrar === 0 && <Actualizarcsv1  dataFromParent = {this.state.dato}
+    // regreso2={{mostrarData2:this.mostrarData2.bind(this)}}
+     />}
+   {this.state.mostrar === 1 && <Actualizarcsv2  dataFromParent = {this.state.dato} 
+  //  regreso2={{mostrarData2:this.mostrarData2.bind(this)}}
+    />}
+ 
+   {/* {this.state.mostrar2 === 1 && <Metadatos  dataFromParent = {this.state.dato}  />}
+   {this.state.mostrar2 === 0 && <Metadatos2  dataFromParent = {this.state.dato}  />} */}
       </div>
     )
   }
 }
-export { Metas }; 
+export { Actualizarcsv }; 

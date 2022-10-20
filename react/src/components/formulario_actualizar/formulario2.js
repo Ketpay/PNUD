@@ -35,7 +35,7 @@ async enviar(){
       "Authorization": "token a5eece1a1bb0dcf21540c6f573f9c264ab6abfb5"
     }
   };
-const res = await  axios.post(url+'/add/form_1/', {
+const res = await  axios.post(url+'/actualizar/add/form_1/', {
 anio:val1,
 dato:val2,
 nombre:this.props.data
@@ -99,7 +99,7 @@ response.style.color = "#de3333";
     <td><button type="button" class="btn btn-dark" onClick={this.enviar.bind(this)}>Agregar</button></td>
 </tr>
 </table>
-<p id="respuesta"></p>
+<p id="respuesta" className='titulo_nombre3'></p>
 
       </div>
 

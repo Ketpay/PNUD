@@ -9,6 +9,11 @@ from rest_framework import status
 from django.contrib.auth.hashers import make_password, check_password
 from db_pnud.models import *
 import random
+from drf_yasg.utils import swagger_auto_schema 
+from django.utils.decorators import method_decorator
+from drf_yasg import openapi
+
+
  
 class Metas_all(APIView):
 
@@ -50,7 +55,7 @@ class Buscar_submetas(APIView):
 
 	authentication_classes = [authentication.TokenAuthentication]
 	permission_classes = [permissions.IsAuthenticated]
-	def post(self, request, *args, **kwargs):
+	def get(self, request, *args, **kwargs):
 		try:
 
 			dato=base_metas_estado_tendencia.objects.order_by().values('meta').distinct()
@@ -98,7 +103,17 @@ class Buscar_submetas(APIView):
 			return Response(response,status=status.HTTP_400_BAD_REQUEST)
 
  
-
+@method_decorator(name='post', decorator=swagger_auto_schema( 
+                     request_body=openapi.Schema(
+                         type=openapi.TYPE_OBJECT,
+                         required=['dato'],
+                         properties={
+                            'dato': openapi.Schema(type=openapi.TYPE_STRING),
+               
+                        	 },
+                     ),
+                     operation_description='Buscar submeta ')
+)
 class Buscar_capas(APIView):
 
 	authentication_classes = [authentication.TokenAuthentication]
@@ -134,7 +149,18 @@ class Buscar_capas(APIView):
 			}
 			return Response(response,status=status.HTTP_400_BAD_REQUEST)
 
- 
+
+@method_decorator(name='post', decorator=swagger_auto_schema( 
+                     request_body=openapi.Schema(
+                         type=openapi.TYPE_OBJECT,
+                         required=['dato'],
+                         properties={
+                            'dato': openapi.Schema(type=openapi.TYPE_STRING),
+               
+                        	 },
+                     ),
+                     operation_description='Buscar datos sobre una submeta')
+)
 class Buscar_data(APIView):
 
 	authentication_classes = [authentication.TokenAuthentication]
@@ -191,7 +217,17 @@ class Buscar_data(APIView):
 			}
 			return Response(response,status=status.HTTP_400_BAD_REQUEST)
 		
-
+@method_decorator(name='post', decorator=swagger_auto_schema( 
+                     request_body=openapi.Schema(
+                         type=openapi.TYPE_OBJECT,
+                         required=['dato'],
+                         properties={
+                            'dato': openapi.Schema(type=openapi.TYPE_STRING),
+               
+                        	 },
+                     ),
+                     operation_description='Buscar datos sobre una submeta para grafico de lineas')
+)
 class Meta_grafico(APIView):
 
 	authentication_classes = [authentication.TokenAuthentication]
@@ -235,7 +271,17 @@ class Meta_grafico(APIView):
 			}
 			return Response(response,status=status.HTTP_400_BAD_REQUEST)
 
-
+@method_decorator(name='post', decorator=swagger_auto_schema( 
+                     request_body=openapi.Schema(
+                         type=openapi.TYPE_OBJECT,
+                         required=['dato'],
+                         properties={
+                            'dato': openapi.Schema(type=openapi.TYPE_STRING),
+               
+                        	 },
+                     ),
+                     operation_description='Buscar datos sobre una submeta para grafico de barras')
+)
 class Meta_grafico_barras(APIView):
 
 	authentication_classes = [authentication.TokenAuthentication]
@@ -271,7 +317,7 @@ class Meta_grafico_barras(APIView):
 			for i in range(len(filtro)):
 				val=list(filtro[i].values())
 				filtro_val.append(str(val[0]))
-			# print(filtro_val)
+ 
 
 
 
@@ -301,7 +347,7 @@ class Meta_grafico_barras(APIView):
 
 
 				lista_data.append(datasets[0])
-			print(lista_data)
+	 
 
 			response={
 					"value": "Correcto",

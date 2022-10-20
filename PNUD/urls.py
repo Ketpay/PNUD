@@ -21,18 +21,32 @@ from rest_web.actualizar import *
 from rest_web.vistas import *
 from rest_web.inicio import *
 from rest_web.login import *
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title="PNUD Doc.",
+      default_version='V1.0.0',
+      description="API Rest del PNUD",
+      # terms_of_service="https://www.google.com/policies/terms/",
+      # contact=openapi.Contact(email="contact@snippets.local"),
+      license=openapi.License(name="MIT License"),
+   ),
+   public=True,
+   permission_classes=[permissions.AllowAny],
+)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 ###################################################################
 # ---------------------------WEB-----------------------------------
 ###################################################################
-
-path('',login ),
-path('inicio/',index ),
-path('metas/',metas ),
-path('actualizar/',actualizar ),
-
-
+    path('',login ),
+    path('inicio/',index ),
+    path('metas/',metas ),
+    path('actualizar/',actualizar ),
 #############################-Views_all-###########################
     path('view/all/ao_access/',View_all_ao_access.as_view()),
     path('view/all/ao_need/',View_all_ao_need.as_view()),
@@ -59,21 +73,29 @@ path('actualizar/',actualizar ),
     path('view/all/spp_trend/',View_all_spp_trend.as_view()),
     path('view/all/tr_sustainability/',View_all_tr_sustainability.as_view()),
     path('view/all/tr_visit_sq_pct_tourism/',View_all_tr_visit_sq_pct_tourism.as_view()),
-
 #############################-Login-###########################
-path('login_web/',LoginToken.as_view()),
+    path('login/',LoginToken.as_view()),
 #############################-Metas-###########################
-    path('view/all/metas/',Metas_all.as_view()),
-    path('buscar/submetas/',Buscar_submetas.as_view()),
-    path('buscar/capas/',Buscar_capas.as_view()),
-    path('view/meta/data/',Buscar_data.as_view()),
-    path('view/meta/grafico/',Meta_grafico.as_view()),
-    path('view/meta/grafico/barras/',Meta_grafico_barras.as_view()),
+    path('metas/view/all/',Metas_all.as_view()),
+    path('metas/buscar/submetas/',Buscar_submetas.as_view()),
+    path('metas/buscar/capas/',Buscar_capas.as_view()),
+    path('metas/view/',Buscar_data.as_view()),
+    path('metas/grafico/',Meta_grafico.as_view()),
+    path('metas/grafico/barras/',Meta_grafico_barras.as_view()),
 #############################-Actualizar-###########################
-    path('add/form_1/',Agregar_data_formulario_1.as_view()),
-    path('add/form_2/',Agregar_data_formulario_2.as_view()),
+    path('actualizar/add/form_1/',Agregar_data_formulario_1.as_view()),
+    path('actualizar/add/form_2/',Agregar_data_formulario_2.as_view()),
+    path('actualizar/add/archivos/',Agregar_data_formulario_csv.as_view()),
 #############################-Inicio-###############################
-    path('objetivos/',Inicio_objetivos.as_view()),
-    path('view/objetivos/',View_objetivos.as_view()),
-    path('view/dimensiones/',View_dimensiones.as_view()),
+    path('inicio/objetivos/',Inicio_objetivos.as_view()),
+    path('inicio/objetivos/view/',View_objetivos.as_view()),
+    path('inicio/dimensiones/view/',View_dimensiones.as_view()),
+
+
+
+
+#############################-Documentacion-###############################
+    path('docs', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('rdocs', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+ 
 ]

@@ -20,7 +20,7 @@ class LoginToken(ObtainAuthToken):
 
 	def post(self, request, *args, **kwargs):
 		try:
-			usuario=request.data.get("usuario")
+			usuario=request.data.get("username")
 			password=request.data.get("password")
 			datos=User.objects.filter(username=usuario).last()
 

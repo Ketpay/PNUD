@@ -1,0 +1,16 @@
+site_name: PNUD Docs
+site_url : https://127.0.0.1:8000
+
+theme:
+  language: es
+  name: material
+  palette:
+    primary: teal
+
+
+
+nav:
+    - Inicio: index.md
+    - Manual de uso: index.md
+    - Mantenimiento: mantenimiento.md
+    - Help: index.md

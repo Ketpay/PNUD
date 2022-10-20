@@ -25,7 +25,7 @@ class PopupData extends React.Component {
                   "Authorization": "token a5eece1a1bb0dcf21540c6f573f9c264ab6abfb5"
                 }
               };
-        const res = await axios.post(url+'/view/dimensiones/', {
+        const res = await axios.post(url+'/inicio/dimensiones/view/', {
             region:this.props.dataFromParent2,
             dimension:this.props.dataFromParent
       },options_url)
@@ -53,6 +53,9 @@ class PopupData extends React.Component {
         })
         return (
             <Popup trigger={<button type="button" class="btn btn-dark">{this.props.dataFromParent}</button>} position="right center">
+            
+            <h5 style={{"textAlign":"center"}}>{this.props.dataFromParent3}</h5>
+            
             <div>
           
                 {itemList}
